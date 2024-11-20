@@ -1,3 +1,4 @@
+import { IBeers } from "../../data/beers";
 import { Button } from "../UI/index";
 import style from "./TodoList.module.css";
 
@@ -5,11 +6,12 @@ type TodoType = {
   userId?: number;
   id: number;
   title: string;
-  completed: boolean;
+  completed?: boolean;
+  isInStock?: boolean;
 };
 
 type PropsType = {
-  todos: TodoType[] | null;
+  todos: TodoType[] | IBeers[] | null;
   completeHandler?: (id: number) => void;
   removeTodoHandler?: (id: number) => void;
 };

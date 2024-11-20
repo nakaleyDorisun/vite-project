@@ -12,6 +12,8 @@ export const FetchTodoListApp = () => {
   const [todos, setTodos] = useState<FetchDataType[]>([]);
   const [showTodo, setShowTodo] = useState(false);
 
+  const buttonValueToggle = showTodo ? "Скрыть" : "Показать";
+
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/todos/")
       .then((res) => res.json())
@@ -36,7 +38,7 @@ export const FetchTodoListApp = () => {
   return (
     <div>
       <h1>TodoListFetchApp</h1>
-      <Button action={() => setShowTodo((p) => !p)} title="Показать" />
+      <Button action={() => setShowTodo((p) => !p)} title={buttonValueToggle} />
       {showTodo && (
         <TodoList
           todos={todos}

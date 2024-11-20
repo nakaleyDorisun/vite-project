@@ -1,8 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import reducer from "../slices/todoListSlice";
+import reducerTodo from "../slices/todoListSlice";
+import reducerBeers from "../slices/beerSlice";
 
 export const store = configureStore({
-  reducer: reducer,
+  reducer: {
+    todos: reducerTodo,
+    beers: reducerBeers,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;

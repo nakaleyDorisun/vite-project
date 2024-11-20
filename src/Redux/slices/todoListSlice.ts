@@ -25,7 +25,7 @@ const todoListSlice = createSlice({
     completeTodo: (state, action) => {
       return state.map((todo) => {
         if (todo.id === action.payload) {
-          return { ...todo, isDone: !todo.completed };
+          return { ...todo, completed: !todo.completed };
         } else {
           return todo;
         }

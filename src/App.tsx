@@ -7,6 +7,7 @@ import { TodoListContextApp } from "./Components/TodoListContextApp/TodoListCont
 import { TodoListReduxApp } from "./Components/TodoListReduxApp/TodoListReduxApp";
 import { TodoListContextProvider } from "./Context/TodoListContext";
 import { FetchTodoListApp } from "./Components/FetchTodoListApp/FetchTodoListApp";
+import { BeerList } from "./Components/BeerList/BeerList";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <TodoListContextApp />
             <TodoListReduxApp />
             <FetchTodoListApp />
+            <BeerList />
           </ContainerComp>
         </Provider>
       </TodoListContextProvider>
