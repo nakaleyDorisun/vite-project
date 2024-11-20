@@ -1,6 +1,6 @@
 import { IBeers } from "../../data/beers";
 import { Button } from "../UI/index";
-import style from "./TodoList.module.css";
+import style from "./List.module.css";
 
 type TodoType = {
   userId?: number;
@@ -11,32 +11,32 @@ type TodoType = {
 };
 
 type PropsType = {
-  todos: TodoType[] | IBeers[] | null;
+  items: TodoType[] | IBeers[] | null;
   completeHandler?: (id: number) => void;
   removeTodoHandler?: (id: number) => void;
 };
 
-export const TodoList = ({
-  todos,
+export const List = ({
+  items,
   removeTodoHandler,
   completeHandler,
 }: PropsType) => {
-  if (!todos) return <h3>loading</h3>;
+  if (!items) return <h3>loading</h3>;
   return (
     <ul>
-      {todos.map((todo) => (
-        <li key={todo.id} className={todo.completed ? style.complete : ""}>
-          {todo.title}
+      {items.map((item) => (
+        <li key={item.id} className={item.completed ? style.complete : ""}>
+          {item.title}
           <Button
             title="Complete"
             action={() => {
-              if (completeHandler) completeHandler(todo.id);
+              if (completeHandler) completeHandler(item.id);
             }}
           />
           <Button
             title="Delete"
             action={() => {
-              if (removeTodoHandler) removeTodoHandler(todo.id);
+              if (removeTodoHandler) removeTodoHandler(item.id);
             }}
           />
         </li>

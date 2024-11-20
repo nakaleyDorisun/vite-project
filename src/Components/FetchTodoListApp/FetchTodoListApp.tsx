@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { TodoList } from "../TodoList/TodoList";
+import { List } from "../List/List";
 import { Button } from "../UI";
 
 type FetchDataType = {
@@ -40,8 +40,8 @@ export const FetchTodoListApp = () => {
       <h1>TodoListFetchApp</h1>
       <Button action={() => setShowTodo((p) => !p)} title={buttonValueToggle} />
       {showTodo && (
-        <TodoList
-          todos={todos}
+        <List
+          items={todos}
           completeHandler={completeHandler}
           removeTodoHandler={deleteTodoHandler}
         />

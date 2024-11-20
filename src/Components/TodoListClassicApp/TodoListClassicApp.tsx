@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button, Input } from "../UI/index";
-import { TodoList } from "../TodoList/TodoList";
+import { List } from "../List/List";
 
 type TodoType = {
   id: number;
@@ -49,8 +49,8 @@ export const TodoListClassicApp = () => {
       <Input value={value} getValue={setValue} />
       <Button title="Add Classic Todo" action={addTodoHandler} />
       {todos.length > 0 ? (
-        <TodoList
-          todos={todos}
+        <List
+          items={todos}
           completeHandler={completeHandler}
           removeTodoHandler={removeTodoHandler}
         />

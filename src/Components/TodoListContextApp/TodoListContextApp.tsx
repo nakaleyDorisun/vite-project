@@ -1,5 +1,5 @@
 import { Button, Input } from "../UI/index";
-import { TodoList } from "../TodoList/TodoList";
+import { List } from "../List/List";
 import { useTodo } from "../../Context/useTodo";
 export const TodoListContextApp = () => {
   console.log("context render");
@@ -19,8 +19,8 @@ export const TodoListContextApp = () => {
       <Input getValue={setValue} value={value} />
       <Button title="Add Context Todo" action={addTodoHandler} />
       {todoList.length > 0 ? (
-        <TodoList
-          todos={todoList}
+        <List
+          items={todoList}
           removeTodoHandler={removeTodoHandler}
           completeHandler={completeHandler}
         />
