@@ -33,7 +33,7 @@ export const TodoListClassicApp = () => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-  const completeHandler = (id: number) => {
+  const completeTodoHandler = (id: number) => {
     const updatedTodos = todos.map((todo) => {
       if (todo.id === id) {
         todo.completed = !todo.completed;
@@ -51,8 +51,8 @@ export const TodoListClassicApp = () => {
       {todos.length > 0 ? (
         <List
           items={todos}
-          completeHandler={completeHandler}
-          removeTodoHandler={removeTodoHandler}
+          completeHandler={completeTodoHandler}
+          removeHandler={removeTodoHandler}
         />
       ) : (
         <p>нет задач</p>

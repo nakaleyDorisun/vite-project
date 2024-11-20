@@ -24,7 +24,7 @@ export const TodoListReduxApp = () => {
     dispatch(removeTodo(id));
   };
 
-  const completeHandler = (id: number) => {
+  const completeTodoHandler = (id: number) => {
     dispatch(completeTodo(id));
   };
 
@@ -37,8 +37,8 @@ export const TodoListReduxApp = () => {
       <Button title="Add Redux Todo" action={addTodoHandler} />
       {state.length > 0 ? (
         <List
-          removeTodoHandler={removeTodoHandler}
-          completeHandler={completeHandler}
+          removeHandler={removeTodoHandler}
+          completeHandler={completeTodoHandler}
           items={state}
         />
       ) : (

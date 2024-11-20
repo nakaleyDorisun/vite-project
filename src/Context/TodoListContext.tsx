@@ -16,7 +16,7 @@ export type TodoListContextType = {
   setValue: React.Dispatch<SetStateAction<string>>;
   addTodoHandler: () => void;
   removeTodoHandler: (id: number) => void;
-  completeHandler: (id: number) => void;
+  completeTodoHandler: (id: number) => void;
 };
 
 export const TodoListContext = createContext<TodoListContextType | null>(null);
@@ -45,7 +45,7 @@ export const TodoListContextProvider = ({
     setTodoList(todoList.filter((todo) => todo.id !== id));
   };
 
-  const completeHandler = (id: number) => {
+  const completeTodoHandler = (id: number) => {
     const updatedTodos = todoList.map((todo) => {
       if (todo.id === id) {
         todo.completed = !todo.completed;
@@ -63,7 +63,7 @@ export const TodoListContextProvider = ({
         setValue,
         addTodoHandler,
         removeTodoHandler,
-        completeHandler,
+        completeTodoHandler,
       }}
     >
       {children}

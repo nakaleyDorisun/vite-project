@@ -10,7 +10,7 @@ export const TodoListContextApp = () => {
     todoList,
     addTodoHandler,
     removeTodoHandler,
-    completeHandler,
+    completeTodoHandler,
   } = useTodo();
 
   return (
@@ -21,8 +21,8 @@ export const TodoListContextApp = () => {
       {todoList.length > 0 ? (
         <List
           items={todoList}
-          removeTodoHandler={removeTodoHandler}
-          completeHandler={completeHandler}
+          removeHandler={removeTodoHandler}
+          completeHandler={completeTodoHandler}
         />
       ) : (
         <p>нет задач</p>

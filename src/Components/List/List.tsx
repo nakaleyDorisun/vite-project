@@ -13,14 +13,10 @@ type TodoType = {
 type PropsType = {
   items: TodoType[] | IBeers[] | null;
   completeHandler?: (id: number) => void;
-  removeTodoHandler?: (id: number) => void;
+  removeHandler?: (id: number) => void;
 };
 
-export const List = ({
-  items,
-  removeTodoHandler,
-  completeHandler,
-}: PropsType) => {
+export const List = ({ items, removeHandler, completeHandler }: PropsType) => {
   if (!items) return <h3>loading</h3>;
   return (
     <ul>
@@ -36,7 +32,7 @@ export const List = ({
           <Button
             title="Delete"
             action={() => {
-              if (removeTodoHandler) removeTodoHandler(item.id);
+              if (removeHandler) removeHandler(item.id);
             }}
           />
         </li>

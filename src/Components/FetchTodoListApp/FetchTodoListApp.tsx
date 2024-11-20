@@ -43,7 +43,7 @@ export const FetchTodoListApp = () => {
         <List
           items={todos}
           completeHandler={completeHandler}
-          removeTodoHandler={deleteTodoHandler}
+          removeHandler={deleteTodoHandler}
         />
       )}
     </div>

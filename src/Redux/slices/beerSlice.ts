@@ -5,7 +5,7 @@ const initialState = beers;
 
 const beerSlice = createSlice({
   name: "beers",
-  initialState: [] as IBeers[],
+  initialState: initialState as IBeers[],
   reducers: {
     addBeer: (state, action) => {
       console.log("addBeer", action.payload);
